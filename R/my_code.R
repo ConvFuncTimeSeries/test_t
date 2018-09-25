@@ -414,8 +414,6 @@ y[n]
 #' {
 #'  	return(dnorm(x,mean=0,sd=0.1))
 #' }
-#' library(MASS)	
-#' library(splines)
 #' y=g_cfar1(1000,5,phi_func)
 #' @export
 g_cfar1 <- function(tmax=1001,rho=5,phi_func=NULL,grid=1000,sigma=1){
@@ -498,8 +496,6 @@ g_cfar1 <- function(tmax=1001,rho=5,phi_func=NULL,grid=1000,sigma=1){
 #' phi_func2= function(x){
 #'	return(0.7*x^4-0.1*x^3-0.15*x)
 #' }
-#' library(MASS)	
-#' library(splines)
 #' y=g_cfar2(1000,5,phi_func1,phi_func2)
 #' @export
 g_cfar2 <- function(tmax=1001,rho=5,phi_func1=NULL, phi_func2=NULL,grid=1000,sigma=1){
@@ -592,8 +588,6 @@ g_cfar2 <- function(tmax=1001,rho=5,phi_func1=NULL, phi_func2=NULL,grid=1000,sig
 #' {
 #'	return(dnorm(x,mean=0,sd=0.1))
 #' }
-#' library(MASS)	
-#' library(splines)
 #' test=g_cfar(1000,5,phi_func)
 #'
 #' phi_func1= function(x){
@@ -702,8 +696,6 @@ g_cfar <- function(tmax=1001,rho=5,phi_list=NULL, grid=1000,sigma=1){
 #' phi_func2= function(x){
 #'	return(0.7*x^4-0.1*x^3-0.15*x)
 #' }
-#' library(MASS)	
-#' library(splines)
 #' y=g_cfar2h(200,1000,1,40,5,phi_func1=phi_func1,phi_func2=phi_func2)
 #' @export
 g_cfar2h <- function(tmax=1001,grid=1000,rho=1,min_obs=40, pois=5,phi_func1=NULL, phi_func2=NULL, weight=NULL){
@@ -806,8 +798,6 @@ g_cfar2h <- function(tmax=1001,grid=1000,rho=1,min_obs=40, pois=5,phi_func1=NULL
 #' {
 #'  	return(dnorm(x,mean=0,sd=0.1))
 #' }
-#' library(MASS)	
-#' library(splines)
 #' grid=1000
 #' y=g_cfar1(grid,5,phi_func)
 #' f_grid=y$cfar
@@ -992,8 +982,6 @@ est_cfar <- function(f,p=3,df_b=10,grid=1000){
 #' {
 #'  	return(dnorm(x,mean=0,sd=0.1))
 #' }
-#' library(MASS)	
-#' library(splines)
 #' y=g_cfar1(1000,5,phi_func)
 #' f_grid=y$cfar
 #' index=seq(1,1001,by=10)
@@ -1213,8 +1201,6 @@ F_test_cfar <- function(f,p.max=6,df_b=10,grid=1000){
 #' phi_func2= function(x){
 #'	return(0.7*x^4-0.1*x^3-0.15*x)
 #' }
-#' library(MASS)	
-#' library(splines)
 #' grid=1000
 #' testh=g_cfar2h(100,grid,1,40,5,phi_func1=phi_func1,phi_func2=phi_func2)
 #' #obtain discret observations
@@ -1592,8 +1578,6 @@ F_test_cfarh <- function(f,weight,p.max=3,grid=1000,df_b=10,num_obs=NULL,x_pos=N
 #' phi_func2= function(x){
 #'	return(0.7*x^4-0.1*x^3-0.15*x)
 #' }
-#' library(MASS)	
-#' library(splines)
 #' grid=1000
 #' testh=g_cfar2h(100,grid,1,40,5,phi_func1=phi_func1,phi_func2=phi_func2)
 #' #obtain discret observations
@@ -1890,8 +1874,6 @@ est_cfarh <- function(f,weight,p=2,grid=1000,df_b=5, num_obs=NULL,x_pos=NULL){
 #'  	return(dnorm(x,mean=0,sd=0.1))
 #' }
 #' y=g_cfar1(100,5,phi_func)
-#' library(MASS)	
-#' library(splines)
 #' f_grid=y$cfar
 #' index=seq(1,1001,by=10)
 #' f=f_grid[,index]
@@ -1950,8 +1932,6 @@ p_cfar <- function(model, f, m=3){
 #'  	return(dnorm(x,mean=0,sd=0.1))
 #' }
 #' y=g_cfar1(100,5,phi_func)
-#' library(MASS)	
-#' library(splines)
 #' f_grid=y$cfar
 #' index=seq(1,1001,by=10)
 #' f=f_grid[,index]
@@ -4388,7 +4368,6 @@ rcAR <- list(par=est,se.est=se.est,residuals=at,sresiduals=sre)
 #' that are common to all the Monte Carlo samples. It needs a utility function
 #' \code{circular2ordinal}, also included in the \code{NTS} package, for efficient memory management.
 #' @examples 
-#' library(tensor)
 #' nobs= 100; pd= 0.95; ssw= 0.1; ssv= 0.5;
 #' xx0= 0; ss0= 0.1; nyy= 50;
 #' yrange= c(-80,80); xdim= 2; ydim= nyy;
@@ -5734,5 +5713,55 @@ wrap.SMC=function(par.natural,yy, mm, setseed=T,resample=T){
 
 
 
+
+#' Setting Up The Predictor Matrix in A Neural Network for Time Series Data
+#'
+#' The function sets up the predictor matrix in a neural network for time series data.
+#' @param zt data matrix, including the dependent variable \code{Y(t)}.
+#' @param locY location of the dependent variable (column number).
+#' @param nfore number of out-of-sample prediction (1-step ahead).
+#' @param lags a vector containing the lagged variables used to form the x-matrix.
+#' @param include.lagY indicator for including lagged \code{Y(t)} in the predictor matrix.
+#' @references
+#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' @return The function returns a list with following components.
+#' \item{X}{\code{x}-matrix for training a neural network.}
+#' \item{y}{\code{y}-output for training a neural network.}
+#' \item{predX}{\code{x}-matrix for the prediction subsample.}
+#' \item{predY}{\code{y}-output for the prediction subsample.}
+#' @export
+"NNsetting" <- function(zt,locY=1,nfore=0,lags=c(1:5),include.lagY=TRUE){
+if(!is.matrix(zt))zt <- as.matrix(zt)
+if(length(lags) < 1)lags=c(1)
+ist <- max(lags)+1
+nT <- nrow(zt)
+if(nfore <= 0) nfore <- 0
+if(nfore > nT) nfore <- 0
+predX <- NULL
+predY <- NULL
+X <- NULL
+train <- nT-nfore
+y <- zt[ist:train,locY]
+if(include.lagY){z1 <- zt
+   }else{
+    z1 <- zt[,-locY]
+   }
+##
+for (i in 1:length(lags)){
+ jj <- lags[i]
+ X <- cbind(X,z1[(ist-jj):(train-jj),])
+ }
+###
+if(train < nT){
+ predY <- zt[(train+1):nT,locY]
+ for (i in 1:length(lags)){
+  jj <- lags[i]
+  predX <- cbind(predX,z1[(train+1-jj):(nT-jj),])
+ }
+}
+
+
+NNsetting <- list(X=X,y=y,predX=predX,predY=predY)
+}
 
 
