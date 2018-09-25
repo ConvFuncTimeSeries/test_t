@@ -30,8 +30,6 @@ phi_func= function(x)
 {
  	return(dnorm(x,mean=0,sd=0.1))
 }
-library(MASS)	
-library(splines)
 y=g_cfar1(1000,5,phi_func)
 }
 \references{

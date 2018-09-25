@@ -47,7 +47,6 @@ that are common to all the Monte Carlo samples. It needs a utility function
 Function of generic sequential Monte Carlo method with delay weighting not using full information proposal distribution.
 }
 \examples{
-library(tensor)
 nobs= 100; pd= 0.95; ssw= 0.1; ssv= 0.5;
 xx0= 0; ss0= 0.1; nyy= 50;
 yrange= c(-80,80); xdim= 2; ydim= nyy;

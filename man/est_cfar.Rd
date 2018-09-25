@@ -30,8 +30,6 @@ phi_func= function(x)
 {
  	return(dnorm(x,mean=0,sd=0.1))
 }
-library(MASS)	
-library(splines)
 grid=1000
 y=g_cfar1(grid,5,phi_func)
 f_grid=y$cfar
