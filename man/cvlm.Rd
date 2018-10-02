@@ -17,7 +17,7 @@ cvlm(y, x, subsize, iter = 100)
 }
 \value{
 The function returns a list with following components.
-\item{rmse}{root mean squares of forecast error for all iterations.}
+\item{rmse}{root mean squares of forecast errors for all iterations.}
 \item{mae}{mean absolute forecast errors for all iterations.}
 }
 \description{
