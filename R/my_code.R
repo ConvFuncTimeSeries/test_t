@@ -5776,7 +5776,7 @@ NNsetting <- list(X=X,y=y,predX=predX,predY=predY)
 #' @references
 #' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
 #' @return The function returns a list with following components.
-#' \item{rmse}{root mean squares of forecast error for all iterations.}
+#' \item{rmse}{root mean squares of forecast errors for all iterations.}
 #' \item{mae}{mean absolute forecast errors for all iterations.}
 #' @export
 "cvlm" <- function(y,x,subsize,iter=100){
