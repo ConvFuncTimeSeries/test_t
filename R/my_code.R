@@ -5765,3 +5765,51 @@ NNsetting <- list(X=X,y=y,predX=predX,predY=predY)
 }
 
 
+
+#' Check linear models with cross validation
+#'
+#' The function checks linear models with cross-validation (out-of-sample prediction).
+#' @param y dependent variable.
+#' @param x design matrix (should include constant if it is needed).
+#' @param subsize sample size of subsampling.
+#' @param iter number of iterations.
+#' @references
+#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' @return The function returns a list with following components.
+#' \item{rmse}{root mean squares of forecast error for all iterations.}
+#' \item{mae}{mean absolute forecast errors for all iterations.}
+#' @export
+"cvlm" <- function(y,x,subsize,iter=100){
+### Use cross-validation (out-of-sample prediction) to check linear models
+# y: dependent variable
+# x: design matrix (should inclde constant if it is needed)
+# subsize: sample size of subsampling
+# iter: number of iterations
+#
+if(!is.matrix(x))x <- as.matrix(x)
+if(is.matrix(y)) y <- c(y[,1])
+rmse <- NULL; mae <- NULL
+nT <- length(y)
+if(subsize >= nT)subsize <- nT-10
+if(subsize < ncol(x))subsize <- floor(nT/2)+1
+nfore <- nT-subsize
+##
+for (i in 1:iter){
+ idx <- sample(c(1:nT),subsize,replace=FALSE)
+ y1 <- y[idx]
+ x1 <- x[idx,]
+ m1 <- lm(y1~-1+.,data=data.frame(x1))
+ yobs <- y[-idx]
+ x2 <- data.frame(x[-idx,])
+ yp <- predict(m1,x2)
+ err <- yobs-yp
+ rmse <- c(rmse,sum(err^2)/nfore)
+ mae <- c(mae,sum(abs(err))/nfore)
+ }
+RMSE <- mean(rmse)
+MAE <- mean(mae)
+cat("Average RMSE: ",RMSE,"\n")
+cat("Average MAE: ",MAE,"\n")
+cvlm <- list(rmse= rmse,mae=mae)
+}
+
