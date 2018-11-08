@@ -4360,7 +4360,7 @@ rcAR <- list(par=est,se.est=se.est,residuals=at,sresiduals=sre)
 #' @param funH a user supplied function \code{h()} for estimation \code{E(h(x_t) | y_t+d}). Default
 #' is identity for estimating the mean. The function should be able to take vector or matrix as input and operates on each element of the input.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns \code{xhat}, an array with dimensions \code{(xdim; nobs; delay+1)},
 #' and the scaled log-likelihood value \code{loglike}. If \code{loglike} is needed, the log weight
 #' calculation in the \code{Sstep} function should retain all constants that are related to
@@ -4498,7 +4498,7 @@ Sstep.SV=function(mm,xx,logww,yyy,par,xdim,ydim){
 #' @param funH a user supplied function \code{h()} for estimation \code{E(h(x_t) | y_t+d}). Default
 #' is identity for estimating the mean. The function should be able to take vector or matrix as input and operates on each element of the input.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns the smoothed values.
 #' @examples
 #' s2 <- 20 #second sonar location at (s2,0)
@@ -4581,7 +4581,7 @@ return(list(xhat=xhat))
 #' @param nyy the dimension of the data.
 #' @param yrange the range of data.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with components:
 #' \item{xx}{the location.}
 #' \item{ss}{the speed.}
@@ -4626,7 +4626,7 @@ simuTargetClutter=function(nobs,pd,ssw,ssv,xx0,ss0,nyy,yrange){
 #' @param xdim the dimension of the state varible.
 #' @param ydim the dimension of the observation.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -4667,7 +4667,7 @@ Sstep.Clutter=function(mm,xx,logww,yyy,par,xdim,ydim){
 #' @param yy the data.
 #' @param ii the indicators.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xhat}{the fitted location.}
 #' \item{shat}{the fitted speed.}
@@ -4792,7 +4792,7 @@ simPassiveSonar=function(nn=200,q,r,start,seed){
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @param resample.sch a binary vector of length \code{nobs}, reflecting the resampling schedule. resample.sch[i]= 1 indicating resample should be carried out at step \code{i}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with components:
 #' \item{xhat}{the fitted value.}
 #' \item{xhatRB}{the fitted value using Rao-Blackwellization.}
@@ -4902,7 +4902,7 @@ KFoneLike=function(mu,SS,yy,HH,GG,WW,VV){
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @param resample a binary vector of length \code{obs}, reflecting the resampling schedule. resample.sch[i]= 1 indicating resample should be carried out at step \code{i}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with components:
 #' \item{xhat}{the fitted value.}
 #' \item{xhatRB}{the fitted value using Rao-Blackwellization.}
@@ -5016,7 +5016,7 @@ KF1update=function(mu,SS,yy,GG,cc,VV){
 #' @param xdim the dimension of the state varible \code{x_t}.
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -5072,7 +5072,7 @@ Sstep.Sonar=function(mm,xx,logww,yy,par,xdim=1,ydim=1){
 #' @param vv \code{vv*t(vv)} is the covariance matrix of the observation noise.
 #' @param par a list of parameter values. \code{H} is the state coefficient matrix, and \code{W*t(W)} is the state innovation covariance matrix.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -5132,7 +5132,7 @@ Sstep.Smooth.Sonar=function(mm,xxt,xxt1,ww,vv,par){
 #' @param xdim2 the dimension of the state varible \code{x_t}.
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -5288,7 +5288,7 @@ mm
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @param resample.sch a binary vector of length \code{obs}, reflecting the resampling schedule. resample.sch[i]= 1 indicating resample should be carried out at step \code{i}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -5400,7 +5400,7 @@ Sstep.Clutter.Full=function(mm,xx,logww,yyy,par,xdim,ydim,resample.sch){
 #' @param funH a user supplied function \code{h()} for estimation \code{E(h(x_t) | y_t+d}). Default
 #' is identity for estimating the mean. The function should be able to take vector or matrix as input and operates on each element of the input.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xhat}{the fitted values.}
 #' \item{loglike}{the log-likelihood.}
@@ -5506,7 +5506,7 @@ SMC.Full=function(SISstep.Full,nobs,yy,mm,par,xx.init,xdim,ydim,
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @param resample.sch a binary vector of length \code{nobs}, reflecting the resampling schedule. resample.sch[i]= 1 indicating resample should be carried out at step \code{i}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xhat}{the fitted values.}
 #' \item{xhatRB}{the fitted values using Rao-Blackwellization.}
@@ -5587,7 +5587,7 @@ SMC.Full.RB=function(SISstep.Full.RB,nobs,yy,mm,par,xx.init,xdim,ydim,
 #' @param ydim the dimension of the observation \code{y_t}.
 #' @param resample.sch a binary vector of length \code{obs}, reflecting the resampling schedule. resample.sch[i]= 1 indicating resample should be carried out at step \code{i}.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with the following components:
 #' \item{xx}{the new sample.}
 #' \item{logww}{the log weights.}
@@ -5693,7 +5693,7 @@ Sstep.Clutter.Full.RB=function(mm,xx,logww,yyy,par,xdim,ydim,
 #' @param setseed the seed number.
 #' @param resample the logical value indicating for resampling.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns the log-likelihood of the data.
 #' @export
 wrap.SMC=function(par.natural,yy, mm, setseed=T,resample=T){
@@ -5723,7 +5723,7 @@ wrap.SMC=function(par.natural,yy, mm, setseed=T,resample=T){
 #' @param lags a vector containing the lagged variables used to form the x-matrix.
 #' @param include.lagY indicator for including lagged \code{Y(t)} in the predictor matrix.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with following components.
 #' \item{X}{\code{x}-matrix for training a neural network.}
 #' \item{y}{\code{y}-output for training a neural network.}
@@ -5774,7 +5774,7 @@ NNsetting <- list(X=X,y=y,predX=predX,predY=predY)
 #' @param subsize sample size of subsampling.
 #' @param iter number of iterations.
 #' @references
-#' Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+#' Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 #' @return The function returns a list with following components.
 #' \item{rmse}{root mean squares of forecast errors for all iterations.}
 #' \item{mae}{mean absolute forecast errors for all iterations.}
