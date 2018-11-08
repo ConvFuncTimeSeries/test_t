@@ -1,8 +1,7 @@
 Package: test2
 Title: Nonlinear time series analysis
 Version: 0.0.0.9000
-Authors@R: c(
-    person("Liu", "Xialu", email = "xialu.liu@sdsu.edu", role = "cre"),
+Authors@R: c(person("Liu", "Xialu", email = "xialu.liu@sdsu.edu", role = "cre"),
     person("Tsay", "Ruey", email = "ruey.tsay@chicagobooth.edu", role = "aut"),
     person("Chen", "Rong", email = "rongchen@stat.rutgers.edu", role = "aut"))
 Description: Simulation, estimation, and prediction methods for nonlinear time series data analysis.
