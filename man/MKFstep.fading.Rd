@@ -81,5 +81,5 @@ BER.known[i] <- sum(abs(Strue[tt]-Shat.known[tt]))/(nobs-50)/2
 }
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

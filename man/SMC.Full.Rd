@@ -4,8 +4,8 @@
 \alias{SMC.Full}
 \title{Generic Sequential Monte Carlo Using Full Information Proposal Distribution}
 \usage{
-SMC.Full(SISstep.Full, nobs, yy, mm, par, xx.init, xdim, ydim, resample.sch,
-  delay = 0, funH = identity)
+SMC.Full(SISstep.Full, nobs, yy, mm, par, xx.init, xdim, ydim,
+  resample.sch, delay = 0, funH = identity)
 }
 \arguments{
 \item{SISstep.Full}{a function that performs one step propagation using a proposal distribution.
@@ -85,5 +85,5 @@ Xxhat.full[,1,kk] <- out2$xhat[1,,1]
 }
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

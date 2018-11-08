@@ -4,8 +4,8 @@
 \alias{MKF.Full.RB}
 \title{Full Information Propagation Step under Mixture Kalman Filter}
 \usage{
-MKF.Full.RB(MKFstep.Full.RB, nobs, yy, mm, par, II.init, mu.init, SS.init, xdim,
-  ydim, resample.sch)
+MKF.Full.RB(MKFstep.Full.RB, nobs, yy, mm, par, II.init, mu.init, SS.init,
+  xdim, ydim, resample.sch)
 }
 \arguments{
 \item{MKFstep.Full.RB}{a function that performs one step propagation under mixture Kalman filter, with full information proposal distribution.
@@ -87,5 +87,5 @@ BER.known[i] <- sum(abs(Strue[tt]-Shat.known[tt]))/(nobs-50)/2
 }
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

@@ -61,5 +61,5 @@ for(dd in c(1,11,21)){
 legend(26.1,-12,legend=c("delay 0","delay 10","delay 20"),lty=c(21,11,1))
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

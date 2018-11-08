@@ -33,5 +33,5 @@ simu <- simuTargetClutter(nobs,pd,ssw,ssv,xx0,ss0,nyy,yrange)
 outKF <- clutterKF(nobs,ssw,ssv,simu$yy,simu$ii)
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

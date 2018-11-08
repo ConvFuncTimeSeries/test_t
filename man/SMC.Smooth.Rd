@@ -65,5 +65,5 @@ out.s5K <- SMC.Smooth(Sstep.Sonar,Sstep.Smooth.Sonar,nobs,yy,mm,par,
 xx.init,xdim,ydim,resample.sch)
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

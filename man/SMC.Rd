@@ -4,8 +4,8 @@
 \alias{SMC}
 \title{Generic Sequential Monte Carlo Method}
 \usage{
-SMC(Sstep, nobs, yy, mm, par, xx.init, xdim, ydim, resample.sch, delay = 0,
-  funH = identity)
+SMC(Sstep, nobs, yy, mm, par, xx.init, xdim, ydim, resample.sch,
+  delay = 0, funH = identity)
 }
 \arguments{
 \item{Sstep}{a function that performs one step propagation using a proposal distribution.
@@ -61,5 +61,5 @@ resample.sch=rep.int(1,nobs)
 out= SMC(Sstep.Clutter,nobs,simu$yy,mm,par,xx.init,xdim,ydim,resample.sch)
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

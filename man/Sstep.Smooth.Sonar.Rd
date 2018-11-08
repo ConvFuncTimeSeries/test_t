@@ -49,5 +49,5 @@ xx.init,xdim,ydim,resample.sch)
 This function uses the sequential importance sampling method to deal with a target with passive sonar for smoothing.
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

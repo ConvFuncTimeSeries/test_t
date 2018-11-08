@@ -76,5 +76,5 @@ Xxhat.full[,1,kk] <- out2$xhat[1,,1]
 }
 }
 \references{
-Tsay, R. and Chen, R. (2018) Nonlinear Time Series Analysis.
+Tsay, R. and Chen, R. (2019). Nonlinear Time Series Analysis. Wiley, New Jersey.
 }

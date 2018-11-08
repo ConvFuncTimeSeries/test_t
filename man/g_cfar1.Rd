@@ -4,7 +4,8 @@
 \alias{g_cfar1}
 \title{Generate a CFAR(1) Process}
 \usage{
-g_cfar1(tmax = 1001, rho = 5, phi_func = NULL, grid = 1000, sigma = 1)
+g_cfar1(tmax = 1001, rho = 5, phi_func = NULL, grid = 1000,
+  sigma = 1)
 }
 \arguments{
 \item{tmax}{length of time.}
